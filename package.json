@@ -1,0 +1,14 @@
+{
+  "name": "evm-experiment",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "chai": "^5.2.0",
+    "hardhat": "^2.22.19"
+  }
+}
