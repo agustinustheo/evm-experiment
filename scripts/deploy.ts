@@ -6,12 +6,16 @@ async function main() {
   console.log("Deploying WETH contracts...");
 
   // Get the deployer account
-  const [deployer] = await ethers.getSigners();
+  const privateKey = process.env.PRIVATE_KEY;
+  const deployer = privateKey 
+    ? new ethers.Wallet(privateKey, ethers.provider)
+    : (await ethers.getSigners())[0];
   console.log(`Deploying with account: ${deployer.address}`);
 
   // Set gas price (20% higher than network average)
-  const gasPrice =
-    ((await ethers.provider.getFeeData()).gasPrice * 500n) / 100n;
+  const feeData = await ethers.provider.getFeeData();
+  const baseGasPrice = feeData.gasPrice ?? 10000000000n; // Default to 10 gwei if null
+  const gasPrice = (baseGasPrice * 500n) / 100n;
   console.log(`Using gas price: ${ethers.formatUnits(gasPrice, "gwei")} gwei`);
 
   // Deploy WETH_v4
