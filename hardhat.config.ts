@@ -1,6 +1,6 @@
 import { HardhatUserConfig } from "hardhat/config";
-import "@nomicfoundation/hardhat-toolbox";
-import "@nomicfoundation/hardhat-ignition-ethers";
+import "@nomiclabs/hardhat-waffle";
+import "@nomiclabs/hardhat-ethers";
 
 import "dotenv/config";
 
@@ -23,26 +23,13 @@ const config: HardhatUserConfig = {
   },
   networks: {
     mandalaTestnet: {
-      url: "https://mlg1.mandalachain.io",
+      url: "https://mlg2.mandalachain.io",
       accounts: [process.env.PRIVATE_KEY!],
       gas: 5500000,
     },
   },
-  etherscan: {
-    apiKey: {
-      mandalaTestnet: "any-api-key-value",
-    },
-    customChains: [
-      {
-        network: "mandalaTestnet",
-        chainId: 6025,
-        urls: {
-          apiURL: "https://niskala.mandalachain.io/api",
-          browserURL: "https://niskala.mandalachain.io/",
-        },
-      },
-    ],
-  },
+  // Etherscan configuration removed for compatibility with Hardhat 2.3.0
+  // Add back when using a compatible version of hardhat-etherscan
 };
 
 export default config;

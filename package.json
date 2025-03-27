@@ -7,10 +7,12 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "@nomicfoundation/hardhat-ignition-ethers": "^0.15.10",
-    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
-    "chai": "^5.2.0",
-    "dotenv": "^16.4.7",
-    "hardhat": "^2.22.19"
+    "@nomiclabs/hardhat-ethers": "^2.0.2",
+    "@nomiclabs/hardhat-waffle": "^2.0.1",
+    "chai": "^4.3.10",
+    "dotenv": "^10.0.0",
+    "ethereum-waffle": "^3.3.0",
+    "ethers": "^5.1.4",
+    "hardhat": "^2.3.0"
   }
 }
