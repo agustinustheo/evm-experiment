@@ -22,7 +22,7 @@ async function main() {
   const weth4 = await WETH4Factory.deploy({ gasPrice: adjustedGasPrice });
   await weth4.deployed();
   const weth4Address = weth4.address;
-  console.log(`WETH9_V5 deployed to: ${weth4Address}`);
+  console.log(`WETH9_V4 deployed to: ${weth4Address}`);
 
   // Deploy WETH_v5
   const WETH5Factory = await (hardhat as any).ethers.getContractFactory("WETH9_V5");

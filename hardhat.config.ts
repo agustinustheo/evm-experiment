@@ -22,7 +22,7 @@ const config: HardhatUserConfig = {
     },
   },
   networks: {
-    mandalaTestnet: {
+    niskalaTestnet: {
       url: "https://mlg2.mandalachain.io",
       accounts: [process.env.PRIVATE_KEY!],
       gas: 5500000,
